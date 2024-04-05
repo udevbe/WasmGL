@@ -1,2 +1,3 @@
-*.wasm
-*.o
+dist
+types
+node_modules

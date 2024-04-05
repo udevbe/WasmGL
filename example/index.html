@@ -18,7 +18,7 @@
     </style>
     <script src="wglutil.js"></script>
     <script src="wasm_container.js"></script>
-    <script src="webgl4wasm.js"></script>
+    <script src="../src/wasmgl.js"></script>
     <script src="wcdbgutil.js"></script>
     <script>
       var program = new WasmContainer("program.wasm");
@@ -39,7 +39,7 @@
       {
         console.log("Loading the WASM program.");
         gl = CreateGLContext(document.getElementById("my_Canvas"));
-        webGL4WASM = new WebGL4WASM(program, gl);
+        webGL4WASM = new Wasmgl(program, gl);
         webGL4WASM.importOpenGLES3();
         initOutputView(document.getElementById("output"), program, 10);
         program.loadWasm().then(() =>
